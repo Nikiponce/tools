@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Blog\Database\Seeders;
+namespace Modules\Challenge\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogDatabaseSeeder extends Seeder
+class ChallengeDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,6 @@ class BlogDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(PostTableSeeder::class);
-        $this->call(TaxonomyTableSeeder::class);
-
-        Model::reguard();
+        // $this->call("OthersTableSeeder");
     }
 }

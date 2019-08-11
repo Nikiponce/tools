@@ -3,9 +3,10 @@
 namespace Modules\Blog\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Blog\Entities\Post;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogDatabaseSeeder extends Seeder
+class PostTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +16,6 @@ class BlogDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        $this->call(PostTableSeeder::class);
-        $this->call(TaxonomyTableSeeder::class);
-
-        Model::reguard();
+        factory(Post::class, 50)->create();
     }
 }

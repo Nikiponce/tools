@@ -11,9 +11,6 @@
 |
 */
 
-Route::prefix('blog')->group(function() {
-    Route::get('/', function(){
-        echo 'route web module';
-        return view('welcome');
-    });
+Route::prefix('challenge')->group(function() {
+    Route::get('/', 'ChallengeController@index');
 });
