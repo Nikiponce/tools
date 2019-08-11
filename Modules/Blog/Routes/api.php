@@ -17,18 +17,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-
-// Route::group(['prefix' => 'blog'], function () {
-//     // Route::post('post/', 'PostController@index');
-// });
 Route::prefix('blog')->group(function() {
-    // Route::prefix('post')->group(function() {
-    //     Route::get('/', 'PostController@index');
-    //     Route::get('/{id}', 'PostController@show');
-    // });
-
     Route::resource('posts', 'PostController');
-    
-    // Route::get('post/', 'PostController@index');
-    Route::get('categories', 'TaxonomyController@index');
+    Route::resource('categories', 'CategoryController');
 });

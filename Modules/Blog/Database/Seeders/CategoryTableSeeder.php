@@ -3,10 +3,10 @@
 namespace Modules\Blog\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Blog\Entities\Taxonomy;
+use Modules\Blog\Entities\Category;
 use Illuminate\Database\Eloquent\Model;
 
-class TaxonomyTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,6 @@ class TaxonomyTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        factory(Taxonomy::class, 10)->create();
+        factory(Category::class, 10)->create();
     }
 }

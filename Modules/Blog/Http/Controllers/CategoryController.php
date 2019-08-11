@@ -5,8 +5,10 @@ namespace Modules\Blog\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Blog\Entities\Category;
+use Modules\Blog\Transformers\CategoryResource;
 
-class TaxonomyController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +16,10 @@ class TaxonomyController extends Controller
      */
     public function index()
     {
-        echo 'hello from Controller';
-        return view('blog::index');
+        $categories = Category::all();
+        return CategoryResource::collection($categories);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create()
-    {
-        // return view('blog::create');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,10 +37,9 @@ class TaxonomyController extends Controller
      * @param int $id
      * @return Response
      */
-    public function show(Post $post)
+    public function show(Category $category)
     {
-        dd($post);
-        return $post;
+        return new CategoryResource($category);
     }
 
     /**

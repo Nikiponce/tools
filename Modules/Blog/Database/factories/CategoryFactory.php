@@ -1,9 +1,9 @@
 <?php
 
 use Faker\Generator as Faker;
-use Modules\Blog\Entities\Taxonomy;
+use Modules\Blog\Entities\Category;
 
-$factory->define(Taxonomy::class, function (Faker $faker) {
+$factory->define(Category::class, function (Faker $faker) {
     $name = $faker->word;
     return [
         'name' => $name,
