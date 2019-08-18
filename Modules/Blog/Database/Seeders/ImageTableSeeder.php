@@ -3,10 +3,10 @@
 namespace Modules\Blog\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Blog\Entities\Category;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Blog\Entities\Image;
 
-class CategoryTableSeeder extends Seeder
+class ImageTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,6 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        factory(Category::class, 5)->create();
+        factory(Image::class, 5)->create();
     }
 }

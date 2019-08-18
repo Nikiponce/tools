@@ -1,6 +1,5 @@
 <?php
 
-use Utils\Helpers;
 use Faker\Generator as Faker;
 use Modules\Blog\Entities\Post;
 

@@ -12,4 +12,9 @@ class Category extends Model
     {
         return $this->hasMany('Modules\Blog\Entities\Category', 'parent_id');
     }
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'posts_categories');
+    }
 }

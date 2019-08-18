@@ -18,6 +18,7 @@ class BlogDatabaseSeeder extends Seeder
 
         $this->call(PostTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
+        $this->call(ImageTableSeeder::class);
 
         Model::reguard();
     }

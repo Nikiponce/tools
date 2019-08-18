@@ -18,6 +18,10 @@ use Illuminate\Http\Request;
 // });
 
 Route::prefix('blog')->group(function() {
+    Route::put('posts/{id}/image', 'PostController@image');
+    Route::put('posts/{id}/category', 'PostController@category');
+    Route::put('posts/{id}/restore', 'PostController@restore');
+    Route::get('posts/trash', 'PostController@trashList');
     Route::resource('posts', 'PostController');
     Route::resource('categories', 'CategoryController');
 });

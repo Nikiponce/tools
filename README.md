@@ -27,6 +27,7 @@
     - color
     - parent
     - tags (true/false)
+    - image
 
     - created_at
     - updated_at

@@ -29,9 +29,9 @@ class CategoriesTable extends Migration
         Schema::create('posts_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('post_id')->nullable();
-            $table->unsignedBigInteger('taxonomy_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('taxonomy_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -44,5 +44,6 @@ class CategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('categories');
+        Schema::dropIfExists('posts_categories');
     }
 }
